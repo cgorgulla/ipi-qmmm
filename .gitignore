@@ -1,0 +1,13 @@
+#ignored patterns
+
+bin/i-pi-driver
+doc/manual.pdf
+doc/manual.xml
+examples/
+*.pyc
+*.pyo
+*.x
+*.mod
+*.out
+*.o
+*~

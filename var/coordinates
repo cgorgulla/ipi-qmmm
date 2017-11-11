@@ -1,0 +1,28 @@
+ipi does internally all with au
+- coordinates
+- cell matrix
+
+
+
+PBC wrapping
+- only uses for drivers on the fly
+- shrinks everything at first such that the unit cell has lenght 1 in all directions
+- rounds all coordinates -> centers the small unit box
+- increases the size again by multi with the cell matrix
+
+
+
+files
+- ipi assumes that all is au unless otherwise specified
+- even though angstrom is std for xyz, pdb, as they also write in the manual
+
+atom coordinates
+- either specifying the units in the via the xml attribute "<file units="angstrom">..."
+-- but this is soon depreciated as they write
+-- affects both cell and atom positions
+- recommended: in the coordinate files only
+-- there atom and cell positions can also have different units
+-- but: I tried it, it didn't work for pdb, just assumed it is in angstrom
+
+-- careful! if unit in the coord file and in ipi input file specified then doubel conversion!!!a
+
