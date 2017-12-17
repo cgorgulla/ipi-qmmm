@@ -216,7 +216,7 @@ class Simulation(dobject):
             print           # me c*g
             print "Waiting for all CP2K clients to connect before starting the simulation."          # me c*g
             trials_count = 0          # me c*g
-            trials_max = self.syslist[0].beads.nbeads + 60          # me c*g
+            trials_max = 2*self.syslist[0].beads.nbeads + 500          # me c*g
             while self.syslist[0].beads.nbeads != len(self.fflist["cp2k"].socket.clients):          # me c*g
                 trials_count += 1          # me c*g
                 print " * Currently " + str(len(self.fflist["cp2k"].socket.clients)) + " of " + str(self.syslist[0].beads.nbeads) + " CP2K clients have connected. Sleeping one second... (trial " + str(trials_count) + " of " + str(trials_max) + ")."          # me c*g
